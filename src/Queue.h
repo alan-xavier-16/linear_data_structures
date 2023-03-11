@@ -6,7 +6,7 @@
 
 class Queue
 {
-private:
+protected:
   int _front = -1; // Point to FRONT of Queue, -1 -> Empty
   int _rear = -1;  // Point to REAR of Queue, -1 -> Empty
   int _size = 0;   // Current size of Queue

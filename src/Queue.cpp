@@ -69,10 +69,10 @@ void Queue::deQueue()
     }
     else
     {
+      std::cout << "Serving: "
+                << "[Q" << _front << "] " << _items[_front] << std::endl;
       _front++;
     }
-    std::cout << "Next in queue: "
-              << "[Q" << _front << "] " << _items[_front] << std::endl;
     _size--;
   }
 }
@@ -80,12 +80,12 @@ void Queue::deQueue()
 // Print Queue items
 void Queue::printQueue()
 {
-  std::cout << "Queue: ";
+  std::cout << "Queue: Front-> ";
   for (int i = _front; i < _size; i++)
   {
     std::cout << "[Q" << i << "] " << _items[i] << " ";
   }
-  std::cout << std::endl;
+  std::cout << "<-Rear" << std::endl;
 }
 
 // Default Destructor
