@@ -35,7 +35,7 @@ Elements in non-linear data structures are not in any sequence, but are arranged
 |      Memory utilization is not efficient.      |  Different structures utilize memory in different efficient ways.  |
 |  Time complexity increase with the data size.  |                 Time complexity remains the same.                  |
 
-In this repo, we will implement a **Stack**, a **Queue** and a **Circular Queue**.
+In this repo, we will implement a **Stack**, a **Queue**, a **Circular Queue** and a **Linked List**.
 
 ### Stacks
 A stack is a linear data structure that follows the principle of Last In First Out (LIFO), i.e. last element inserted inside the stack is removed first. Some basic operations of a stack are:
@@ -56,4 +56,4 @@ A queue is a linear data structure that follows the First In First Out (FIFO) pr
 - `Peek`: Get the value of the top element without removing it
 
 ### Circular Queue
-A circular queue is a type of queue where the last element points to the first element, thereby creating a line between the two. It's main advantage, over the regular queue, is better memory utilization as it allows us to add elements to the empty spaces of the queue, in situations where the last elements of the queue are occupied and the front elements are empty.
+A circular queue is a type of queue where the last element points to the first element, thereby creating a line between the two. It's main advantage, over the regular queue, is better memory utilization as it allows us to add elements to the empty spaces of the queue, in situations where the last elements of the queue are occupied and the front elements are empty. **Note**: The queue indices are updated by `circular increments`, i.e. `FRONT = (FRONT+1) % SIZE`.
