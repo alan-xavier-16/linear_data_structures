@@ -20,4 +20,6 @@ add_executable(simpleds
   src/Stack.cpp
   src/Queue.h
   src/Queue.cpp
+  src/CircQueue.h
+  src/CircQueue.cpp
   )
