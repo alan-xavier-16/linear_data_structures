@@ -17,4 +17,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -Wall -Wextra -Wpedantic")
 add_executable(simpleds
   src/main.cpp
   src/Stack.h
-  src/Stack.cpp)
+  src/Stack.cpp
+  src/Queue.h
+  src/Queue.cpp
+  )
