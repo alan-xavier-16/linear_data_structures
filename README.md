@@ -47,6 +47,13 @@ A stack is a linear data structure that follows the principle of Last In First O
 - `Peek`: Get the value of the top element without removing it
 
 ### Queue
+A queue is a linear data structure that follows the First In First Out (FIFO) principle, i.e. the element that was first added is removed first. Some basic operations of a queue are:
 
+- `Enqueue`: Add an element to the end of a queue
+- `Dequeue`: Remove an element from the front of a queue
+- `IsEmpty`: Check if the queue is empty
+- `IsFull`: Check if the queue is full
+- `Peek`: Get the value of the top element without removing it
 
 ### Circular Queue
+A circular queue is a type of queue where the last element points to the first element, thereby creating a line between the two. It's main advantage, over the regular queue, is better memory utilization as it allows us to add elements to the empty spaces of the queue, in situations where the last elements of the queue are occupied and the front elements are empty.
