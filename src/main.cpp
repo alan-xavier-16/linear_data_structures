@@ -75,20 +75,35 @@ int main()
   // Assign HEAD of list
   head = n0;
 
-  // Display List
+  // TRAVERSE List
   std::cout << "HEAD: ";
-  while (head != NULL)
+  Node *temp = head;
+  while (temp != NULL)
   {
-    head->getData();
-    head = head->getNext();
+    temp->getData();
+    temp = temp->getNext();
   }
   std::cout << "NULL" << std::endl;
 
-  delete head;
+  // INSERT at beginning
+  Node *n4 = new Node(4);
+  n4->addNext(head);
+  head = n4;
+
+  std::cout << "Insert Beginning::HEAD: ";
+  temp = head;
+  while (temp != NULL)
+  {
+    temp->getData();
+    temp = temp->getNext();
+  }
+  std::cout << "NULL" << std::endl;
+
   delete n0;
   delete n1;
   delete n2;
   delete n3;
+  delete n4;
 
   std::cout << "End\n"
             << std::endl;
