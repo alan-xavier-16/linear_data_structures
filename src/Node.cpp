@@ -36,5 +36,15 @@ int Node::getData()
   return _data;
 }
 
+// Display List
+void Node::display(Node *temp)
+{
+  while (temp != NULL)
+  {
+    temp->getData();
+    temp = temp->getNext();
+  }
+}
+
 // Default Destructor
 Node::~Node() {}

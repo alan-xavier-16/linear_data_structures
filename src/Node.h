@@ -31,6 +31,9 @@ public:
   // Show Data
   int getData();
 
+  // Display List
+  void display(Node *temp);
+
   // Default Destructor
   ~Node();
 };

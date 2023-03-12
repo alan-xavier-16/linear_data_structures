@@ -77,12 +77,8 @@ int main()
 
   // TRAVERSE List
   std::cout << "HEAD: ";
-  Node *temp = head;
-  while (temp != NULL)
-  {
-    temp->getData();
-    temp = temp->getNext();
-  }
+  // Node *temp = head;
+  head->display(head);
   std::cout << "NULL" << std::endl;
 
   // INSERT at beginning
@@ -91,12 +87,7 @@ int main()
   head = n4;
 
   std::cout << "Insert Beginning::HEAD: ";
-  temp = head;
-  while (temp != NULL)
-  {
-    temp->getData();
-    temp = temp->getNext();
-  }
+  head->display(head);
   std::cout << "NULL" << std::endl;
 
   delete n0;
