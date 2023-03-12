@@ -57,3 +57,14 @@ A queue is a linear data structure that follows the First In First Out (FIFO) pr
 
 ### Circular Queue
 A circular queue is a type of queue where the last element points to the first element, thereby creating a line between the two. It's main advantage, over the regular queue, is better memory utilization as it allows us to add elements to the empty spaces of the queue, in situations where the last elements of the queue are occupied and the front elements are empty. **Note**: The queue indices are updated by `circular increments`, i.e. `FRONT = (FRONT+1) % SIZE`.
+
+### Linked List
+In a linked list, a series of nodes are connected, whereby each node stores its **data** and the **address** of the next node in the series. Normally, the address of the first node is assigned a special name 'HEAD', while the last node points to 'NULL'.
+
+Some basic operations of a linked list are:
+
+- `Traversal`: Access each node in the list
+- `Insertion`: Add a node in the list
+- `Deletion`: Remove a node in the list
+- `Search`: Find a node in the list
+- `Sort`: Sort the nodes in the list
