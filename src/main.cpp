@@ -2,6 +2,7 @@
 #include "Stack.h"
 #include "Queue.h"
 #include "CircQueue.h"
+#include "Node.h"
 
 int main()
 {
@@ -56,42 +57,39 @@ int main()
   delete q;
   std::cout << "End\n"
             << std::endl;
-  /* ---------------------------------- Circular Queue --------------------------------- */
-  std::cout << "Testing Circular Queue: " << std::endl;
-  CircQueue *cq = new CircQueue(5);
+  /* ---------------------------------- Linked List --------------------------------- */
+  std::cout << "Testing Linked List: " << std::endl;
 
-  // Can't remove from empty queue
-  cq->deQueue();
+  // Create pointers to Nodes
+  Node *head;
+  Node *n0 = new Node(0);
+  Node *n1 = new Node(1);
+  Node *n2 = new Node(2);
+  Node *n3 = new Node(3);
 
-  // Add to queue
-  cq->enQueue(1);
-  cq->enQueue(2);
-  cq->enQueue(3);
-  cq->enQueue(4);
-  cq->enQueue(5);
+  // Connect Nodes, Linear Linked List
+  n0->addNext(n1);
+  n1->addNext(n2);
+  n2->addNext(n3);
 
-  // Unable to add to full queue
-  cq->enQueue(6);
+  // Assign HEAD of list
+  head = n0;
 
-  std::cout << "Before dequeue." << std::endl;
-  cq->printQueue();
+  // Display List
+  std::cout << "HEAD: ";
+  while (head != NULL)
+  {
+    head->getData();
+    head = head->getNext();
+  }
+  std::cout << "NULL" << std::endl;
 
-  // Remove first element in queue
-  cq->deQueue();
+  delete head;
+  delete n0;
+  delete n1;
+  delete n2;
+  delete n3;
 
-  std::cout << "After dequeue." << std::endl;
-  cq->printQueue();
-
-  // Add to queue
-  cq->enQueue(6);
-
-  std::cout << "After enqueue." << std::endl;
-  cq->printQueue();
-
-  // Unable to add to full queue
-  cq->enQueue(7);
-
-  delete cq;
   std::cout << "End\n"
             << std::endl;
 }

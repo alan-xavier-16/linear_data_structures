@@ -22,4 +22,6 @@ add_executable(simpleds
   src/Queue.cpp
   src/CircQueue.h
   src/CircQueue.cpp
+  src/Node.h
+  src/Node.cpp
   )
