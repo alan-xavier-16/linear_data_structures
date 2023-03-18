@@ -12,6 +12,9 @@ private:
   Node *_prev = NULL; // Point to PREVIOUS NODE in LIST, Default is NULL
 
 public:
+  // Static Variable Counter
+  static int SIZE;
+
   // Default Constructor
   Node();
   Node(int data);
@@ -31,8 +34,11 @@ public:
   // Show Data
   int getData();
 
-  // Display List
-  void display(Node *temp);
+  // TRAVERSE List
+  void traverse(Node *temp);
+
+  // INSERT List: loc -> BEG: 0, END: 1, MID: 2
+  void insert(Node *temp, Node *newNode, int loc);
 
   // Default Destructor
   ~Node();
