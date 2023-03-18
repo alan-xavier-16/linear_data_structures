@@ -7,18 +7,17 @@ int Node::SIZE = 0;
 // Default Constructor
 Node::Node()
 {
-  SIZE++;
 }
 
 Node::Node(int data) : _data(data)
 {
-  SIZE++;
 }
 
 // Add Next Node in List
 void Node::addNext(Node *next)
 {
   _next = next;
+  SIZE++;
 }
 
 // Add Prev Node in List
@@ -69,34 +68,28 @@ void Node::insert(Node *temp, Node *newNode, int loc)
   }
   else if (loc == 1) // END
   {
-    for (int i = 0; i < (Node::SIZE - 1); i++) // -1 as new node added to list length before insertion
+    while (temp->getNext() != NULL)
     {
-      if (temp->getNext() == NULL)
-      {
-        // Link new node to end
-        temp->addNext(newNode);
-      }
-      else
-      {
-        temp = temp->getNext();
-      }
+      temp = temp->getNext();
     }
+    // Link new node to end
+    temp->addNext(newNode);
   }
   else if (loc == 2) // MID
   {
-    int midIdx = (((Node::SIZE - 1) % 2) + ((Node::SIZE - 1) / 2)); // -1 as new node added to list length before insertion
+    int midIdx = ((Node::SIZE % 2) + (Node::SIZE / 2));
     for (int i = 1; i < (midIdx + 1); i++)
     {
-      if (i == midIdx)
+      if (i != midIdx)
+      {
+        temp = temp->getNext();
+      }
+      else
       {
         // Link new node to node after
         newNode->addNext(temp->getNext());
         // Add new node AFTER node before
         temp->addNext(newNode);
-      }
-      else
-      {
-        temp = temp->getNext();
       }
     }
   }
