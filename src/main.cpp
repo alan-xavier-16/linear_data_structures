@@ -78,16 +78,38 @@ int main()
   // TRAVERSE List
   std::cout << "HEAD: ";
   // Node *temp = head;
-  head->display(head);
+  head->traverse(head);
   std::cout << "NULL" << std::endl;
 
-  // INSERT at beginning
+  // INSERT at BEG
   Node *n4 = new Node(4);
-  n4->addNext(head);
-  head = n4;
+  head->insert(head, n4, 0);
 
-  std::cout << "Insert Beginning::HEAD: ";
-  head->display(head);
+  std::cout << "Insert Beg::HEAD: ";
+  head->traverse(head);
+  std::cout << "NULL" << std::endl;
+
+  // INSERT at END
+  Node *n5 = new Node(5);
+  head->insert(head, n5, 1);
+
+  std::cout << "Insert End::HEAD: ";
+  head->traverse(head);
+  std::cout << "NULL" << std::endl;
+
+  // INSERT at MID
+  Node *n6 = new Node(6);
+  head->insert(head, n6, 2);
+
+  std::cout << "Insert MID::HEAD: ";
+  head->traverse(head);
+  std::cout << "NULL" << std::endl;
+
+  Node *n7 = new Node(7);
+  head->insert(head, n7, 2);
+
+  std::cout << "Insert MID::HEAD: ";
+  head->traverse(head);
   std::cout << "NULL" << std::endl;
 
   delete n0;
@@ -95,6 +117,9 @@ int main()
   delete n2;
   delete n3;
   delete n4;
+  delete n5;
+  delete n6;
+  delete n7;
 
   std::cout << "End\n"
             << std::endl;
