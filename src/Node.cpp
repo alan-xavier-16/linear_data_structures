@@ -58,7 +58,7 @@ void Node::traverse(Node *&head)
 }
 
 // INSERT List:
-// * temp -> HEAD of list
+// * head -> HEAD of list
 // * newNode -> New node to add
 // * loc -> BEG: 0, END: 1, MID: 2
 void Node::insert(Node *&head, Node *&newNode, int loc)
@@ -94,6 +94,42 @@ void Node::insert(Node *&head, Node *&newNode, int loc)
         newNode->addNext(temp->getNext());
         // Add new node AFTER node before
         temp->addNext(newNode);
+      }
+    }
+  }
+}
+
+// DELETE List:
+// * head -> HEAD of list
+// * loc -> BEG: 0, END: 1, MID: 2
+void Node::del(Node *&head, int loc)
+{
+  Node *temp = head;
+  if (loc == 0) // BEG
+  {
+    head = head->getNext();
+  }
+  else if (loc == 1) // END
+  {
+    while (temp->getNext()->getNext() != NULL)
+    {
+      temp = temp->getNext();
+    }
+    temp->addNext(NULL);
+  }
+  else if (loc == 2) // MID
+  {
+    int midIdx = ((Node::SIZE % 2) + (Node::SIZE / 2)) - 1;
+    for (int i = 1; i < (midIdx + 1); i++)
+    {
+      if (i != midIdx - 1)
+      {
+        temp = temp->getNext();
+      }
+      else
+      {
+        // Skip deleted node
+        temp->addNext(temp->getNext()->getNext());
       }
     }
   }
