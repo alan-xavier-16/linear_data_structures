@@ -42,7 +42,6 @@ Node *Node::getPrev()
 // Show Data
 int Node::getData()
 {
-  std::cout << _data << "->";
   return _data;
 }
 
@@ -52,7 +51,7 @@ void Node::traverse(Node *&head)
   Node *temp = head;
   while (temp != NULL)
   {
-    temp->getData();
+    std::cout << temp->getData() << "->";
     temp = temp->getNext();
   }
 }
@@ -133,6 +132,25 @@ void Node::del(Node *&head, int loc)
       }
     }
   }
+}
+
+// SEARCH List:
+bool Node::search(Node *&head, int key)
+{
+  Node *temp = head;
+  while (temp != NULL)
+  {
+    // Check if key matches data of Node
+    if (key == temp->getData())
+    {
+      return true;
+    }
+    else // Move to next node in list
+    {
+      temp = temp->getNext();
+    }
+  }
+  return false;
 }
 
 // Default Destructor

@@ -43,6 +43,9 @@ public:
   // DELETE List: loc -> BEG: 0, END: 1, MID: 2
   void del(Node *&head, int loc);
 
+  // SEARCH List:
+  bool search(Node *&head, int key);
+
   // Default Destructor
   ~Node();
 };
