@@ -84,7 +84,6 @@ int main()
   // INSERT at BEG
   Node *n4 = new Node(4);
   head->insert(head, n4, 0);
-
   std::cout << "Insert Beg::HEAD: ";
   head->traverse(head);
   std::cout << "NULL" << std::endl;
@@ -92,7 +91,6 @@ int main()
   // INSERT at END
   Node *n5 = new Node(5);
   head->insert(head, n5, 1);
-
   std::cout << "Insert End::HEAD: ";
   head->traverse(head);
   std::cout << "NULL" << std::endl;
@@ -100,15 +98,36 @@ int main()
   // INSERT at MID
   Node *n6 = new Node(6);
   head->insert(head, n6, 2);
-
   std::cout << "Insert MID::HEAD: ";
   head->traverse(head);
   std::cout << "NULL" << std::endl;
 
   Node *n7 = new Node(7);
   head->insert(head, n7, 2);
-
   std::cout << "Insert MID::HEAD: ";
+  head->traverse(head);
+  std::cout << "NULL" << std::endl;
+
+  // DELETE at BEG
+  head->del(head, 0); // head points to second node
+  std::cout << "Delete BEG::HEAD: ";
+  head->traverse(head);
+  std::cout << "NULL" << std::endl;
+
+  // DELETE from END
+  head->del(head, 1);
+  std::cout << "Delete END::HEAD: ";
+  head->traverse(head);
+  std::cout << "NULL" << std::endl;
+
+  // DELETE from MID
+  head->del(head, 2);
+  std::cout << "Delete MID::HEAD: ";
+  head->traverse(head);
+  std::cout << "NULL" << std::endl;
+
+  head->del(head, 2);
+  std::cout << "Delete MID::HEAD: ";
   head->traverse(head);
   std::cout << "NULL" << std::endl;
 
