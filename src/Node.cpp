@@ -7,17 +7,18 @@ int Node::SIZE = 0;
 // Default Constructor
 Node::Node()
 {
+  SIZE++;
 }
 
 Node::Node(int data) : _data(data)
 {
+  SIZE++;
 }
 
 // Add Next Node in List
 void Node::addNext(Node *next)
 {
   _next = next;
-  SIZE++;
 }
 
 // Add Prev Node in List
@@ -46,8 +47,9 @@ int Node::getData()
 }
 
 // TRAVERSE List
-void Node::traverse(Node *temp)
+void Node::traverse(Node *&head)
 {
+  Node *temp = head;
   while (temp != NULL)
   {
     temp->getData();
@@ -59,12 +61,13 @@ void Node::traverse(Node *temp)
 // * temp -> HEAD of list
 // * newNode -> New node to add
 // * loc -> BEG: 0, END: 1, MID: 2
-void Node::insert(Node *temp, Node *newNode, int loc)
+void Node::insert(Node *&head, Node *&newNode, int loc)
 {
+  Node *temp = head;
   if (loc == 0) // BEG
   {
-    newNode->addNext(temp);
-    temp = newNode;
+    newNode->addNext(head);
+    head = newNode;
   }
   else if (loc == 1) // END
   {
@@ -77,7 +80,8 @@ void Node::insert(Node *temp, Node *newNode, int loc)
   }
   else if (loc == 2) // MID
   {
-    int midIdx = ((Node::SIZE % 2) + (Node::SIZE / 2));
+    int size = Node::SIZE - 1; // Node not added as yet
+    int midIdx = ((size % 2) + (size / 2));
     for (int i = 1; i < (midIdx + 1); i++)
     {
       if (i != midIdx)

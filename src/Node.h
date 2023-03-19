@@ -35,10 +35,10 @@ public:
   int getData();
 
   // TRAVERSE List
-  void traverse(Node *temp);
+  void traverse(Node *&head);
 
   // INSERT List: loc -> BEG: 0, END: 1, MID: 2
-  void insert(Node *temp, Node *newNode, int loc);
+  void insert(Node *&head, Node *&newNode, int loc);
 
   // Default Destructor
   ~Node();
