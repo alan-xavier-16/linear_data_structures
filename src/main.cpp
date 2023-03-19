@@ -75,12 +75,14 @@ int main()
   // Assign HEAD of list
   head = n0;
 
+  /* -------------------------------- TRAVERSE -------------------------------- */
   // TRAVERSE List
   std::cout << "HEAD: ";
   // Node *temp = head;
   head->traverse(head);
   std::cout << "NULL" << std::endl;
 
+  /* --------------------------------- INSERT --------------------------------- */
   // INSERT at BEG
   Node *n4 = new Node(4);
   head->insert(head, n4, 0);
@@ -108,6 +110,7 @@ int main()
   head->traverse(head);
   std::cout << "NULL" << std::endl;
 
+  /* --------------------------------- DELETE --------------------------------- */
   // DELETE at BEG
   head->del(head, 0); // head points to second node
   std::cout << "Delete BEG::HEAD: ";
@@ -130,6 +133,10 @@ int main()
   std::cout << "Delete MID::HEAD: ";
   head->traverse(head);
   std::cout << "NULL" << std::endl;
+
+  /* --------------------------------- SEARCH --------------------------------- */
+  std::cout << "Search for 2: " << head->search(head, 2) << std::endl;
+  std::cout << "Search for 6: " << head->search(head, 6) << std::endl;
 
   delete n0;
   delete n1;
