@@ -112,7 +112,7 @@ The value of `m` must not be the powers of `2`, since if $m = 2^p$, then $h(k) =
 
 Computing $h(k) = k \% m$ is a relatively expensive operation. However, if $m=2^p$ is a power of `2`, the remainder operation just looks at the p lowest-order bits as it can be done in a single instruction, by taking the `bitwise AND` with $2^p−1$.
 
-Consider the decimal case. $8237643 \% 1034$ is difficult to compute ,but $8237643 \% 1000$ is easy $643$. This is because $1000=10^3$ is a power of ten, whereas $1034$ is not.
+Consider the decimal case. $8237643 \% 1034$ is difficult to compute, but $8237643 \% 1000$ is easy $643$. This is because $1000=10^3$ is a power of ten, whereas $1034$ is not.
 
 2. `Multiplication Method`:
 $$h(k) = ⌊m(kA \% 1)⌋,$$
