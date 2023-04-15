@@ -3,6 +3,7 @@
 #include "Queue.h"
 #include "CircQueue.h"
 #include "Node.h"
+#include "HashTable.h"
 
 int main()
 {
@@ -146,6 +147,31 @@ int main()
   delete n5;
   delete n6;
   delete n7;
+
+  std::cout << "End\n"
+            << std::endl;
+  /* ---------------------------------- HashTable --------------------------------- */
+  std::cout << "Testing HashTable: " << std::endl;
+
+  // Create Hash Table items
+  int key[] = {15, 11, 27, 8, 12};
+  int size = sizeof(key) / sizeof(key[0]);
+
+  // Create Hash Table
+  HashTable hash = HashTable(size);
+
+  // Insert Items to Hash Table
+  std::cout << "Inserting: " << std::endl;
+  for (int i = 0; i < size; i++)
+  {
+    hash.insertItem(key[i]);
+  }
+  hash.displayHash();
+
+  // Delete Items from Hash Table
+  std::cout << "\nDeleting: " << std::endl;
+  hash.deleteItem(12);
+  hash.displayHash();
 
   std::cout << "End\n"
             << std::endl;

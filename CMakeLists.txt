@@ -24,4 +24,6 @@ add_executable(simpleds
   src/CircQueue.cpp
   src/Node.h
   src/Node.cpp
+  src/HashTable.h
+  src/HashTable.cpp
   )
