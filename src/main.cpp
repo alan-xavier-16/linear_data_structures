@@ -154,8 +154,13 @@ int main()
   std::cout << "Testing HashTable: " << std::endl;
 
   // Create Hash Table items
-  int key[] = {15, 11, 27, 8, 12};
-  int size = sizeof(key) / sizeof(key[0]);
+  TableItem items[] = {
+      {15, 101},
+      {11, 121},
+      {27, 148},
+      {8, 180},
+      {12, 100}};
+  int size = sizeof(items) / sizeof(items[0]);
 
   // Create Hash Table
   HashTable hash = HashTable(size);
@@ -164,13 +169,13 @@ int main()
   std::cout << "Inserting: " << std::endl;
   for (int i = 0; i < size; i++)
   {
-    hash.insertItem(key[i]);
+    hash.insertItem(items[i]);
   }
   hash.displayHash();
 
   // Delete Items from Hash Table
-  std::cout << "\nDeleting: " << std::endl;
-  hash.deleteItem(12);
+  std::cout << "\nDeleting {12, 100}: " << std::endl;
+  hash.deleteItem(items[4]);
   hash.displayHash();
 
   std::cout << "End\n"

@@ -30,7 +30,7 @@ HashTable::HashTable(int c) : _capacity(getPrime(c))
 {
   std::cout << "m=" << _capacity << std::endl;
   // Create Hash Table
-  this->_table = new std::list<int>[_capacity];
+  this->_table = new std::list<TableItem>[_capacity];
 }
 
 // Hash Function --> Division Method
@@ -40,26 +40,26 @@ int HashTable::hashFunction(int key)
 }
 
 // Insert Item to Table
-void HashTable::insertItem(int key)
+void HashTable::insertItem(TableItem &item)
 {
   // Determine hash index using specific hash function
-  int idx = hashFunction(key);
+  int idx = hashFunction(item.key);
   // Add item to table by 'chaining' to avoid collisions
-  _table[idx].push_back(key);
+  _table[idx].push_back(item);
 }
 
 // Delete Item to Table
-void HashTable::deleteItem(int key)
+void HashTable::deleteItem(TableItem &item)
 {
   // Determine hash index
-  int idx = hashFunction(key);
+  int idx = hashFunction(item.key);
   // Create iterator
-  std::list<int>::iterator i;
+  std::list<TableItem>::iterator i;
   // Point to the first element of the linked list at a specific table index
   for (i = _table[idx].begin(); i != _table[idx].end(); i++)
   {
     // Dereference item and compare to key
-    if (*i == key)
+    if (i->key == item.key)
     {
       break;
     }
@@ -80,7 +80,7 @@ void HashTable::displayHash()
     // Loop over linked list
     for (auto d : _table[i])
     {
-      std::cout << "-->" << d;
+      std::cout << "--> {" << d.key << ", " << d.data << "}";
     }
     std::cout << std::endl;
   }

@@ -5,13 +5,19 @@
 #include <iostream>
 #include <list>
 
+struct TableItem
+{
+  int key;
+  int data;
+};
+
 class HashTable
 {
 private:
   // No. of buckets
   int _capacity;
   // Pointer to linked list containing buckets
-  std::list<int> *_table;
+  std::list<TableItem> *_table;
 
 public:
   // Ensure Table size 'm' is OK
@@ -27,10 +33,10 @@ public:
   int hashFunction(int key);
 
   // Insert Item to Table
-  void insertItem(int key);
+  void insertItem(TableItem &item);
 
   // Delete Item to Table
-  void deleteItem(int key);
+  void deleteItem(TableItem &item);
 
   // Display hash for item
   void displayHash();
